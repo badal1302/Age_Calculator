@@ -3,44 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Age Calculator</title>
+    <title>Modern Calculator</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,700;0,800;0,900;1,100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <div class="calculator"> 
-            <h1>Javascript <br><span>Age Calculator</span></h1>
-            <div class="input-box"> 
-                <div class="input-fields"> 
-                    <div style="display: flex; align-items: center; width: 50%; justify-content: center;">
-                        <p>Date of birth: </p>
-                        <input type="date" id="date">
-                    </div>
-                    <div style="display: flex; align-items: center; width: 50%; justify-content: center;">
-                        <p>Units: </p>
-                        <select id="unitSelector">
-                            <option value="ymd">Years, Months & Days</option>
-                            <option value="years">Years</option>
-                            <option value="months">Months</option>
-                            <option value="days">Days</option>
-                            <option value="dogYears">Dog Years</option>
-                            </select>
-                        </input>  
-                    </div>
-                </div>
-                <div class="input-btns">
-                    <button onclick="calculateAge()" id="reset-button">Calculate</button>
-                    <button onclick="resetFields()" id="reset-button">Reset</button>
-                </div>
-                <div class="input-results">
-                    <p id="result"></p>
-                </div>
+        <div class="calculator">
+            <div class="display">
+                <div class="previous-operand" id="previous-operand"></div>
+                <div class="current-operand" id="current-operand">0</div>
+            </div>
+            <div class="buttons">
+                <button class="btn btn-clear span-two" onclick="calculator.clear()">AC</button>
+                <button class="btn btn-operator" onclick="calculator.delete()">⌫</button>
+                <button class="btn btn-operator" onclick="calculator.chooseOperation('÷')">÷</button>
+                
+                <button class="btn btn-number" onclick="calculator.appendNumber('7')">7</button>
+                <button class="btn btn-number" onclick="calculator.appendNumber('8')">8</button>
+                <button class="btn btn-number" onclick="calculator.appendNumber('9')">9</button>
+                <button class="btn btn-operator" onclick="calculator.chooseOperation('×')">×</button>
+                
+                <button class="btn btn-number" onclick="calculator.appendNumber('4')">4</button>
+                <button class="btn btn-number" onclick="calculator.appendNumber('5')">5</button>
+                <button class="btn btn-number" onclick="calculator.appendNumber('6')">6</button>
+                <button class="btn btn-operator" onclick="calculator.chooseOperation('-')">-</button>
+                
+                <button class="btn btn-number" onclick="calculator.appendNumber('1')">1</button>
+                <button class="btn btn-number" onclick="calculator.appendNumber('2')">2</button>
+                <button class="btn btn-number" onclick="calculator.appendNumber('3')">3</button>
+                <button class="btn btn-operator" onclick="calculator.chooseOperation('+')">+</button>
+                
+                <button class="btn btn-number span-two" onclick="calculator.appendNumber('0')">0</button>
+                <button class="btn btn-number" onclick="calculator.appendNumber('.')">.</button>
+                <button class="btn btn-equals" onclick="calculator.compute()">=</button>
             </div>
         </div>
-        
     </div>
     <script src="script.js"></script>
 </body>
